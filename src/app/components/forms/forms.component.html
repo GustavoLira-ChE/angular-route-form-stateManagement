@@ -1,0 +1,10 @@
+<h3>{{subtitle}}</h3>
+<nav>
+  <a routerLink="/forms/tdf">TDF</a>
+  <a routerLink="/forms/mdf1">MDF - with formGroup and formControl</a>
+  <a routerLink="/forms/mdf2">MDF - with formBuilder</a>
+</nav>
+<router-outlet></router-outlet>
+
+<br>
+<div>Current Count: {{ count$ | async }}</div>

@@ -1,0 +1,28 @@
+<h4>Template Drive Form</h4>
+<form #tdform="ngForm" (ngSubmit)="onSubmit(tdform.value)">
+  <!--
+    #tdform is a template reference variable
+    We need to use FormsModule
+  -->
+  <div>
+    <label>Name</label>
+    <input type="text" ngModel name="name">
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="email" ngModel name="email">
+  </div>
+  <div ngModelGroup="address">
+    <div>
+      <label>Street</label>
+      <input type="email" ngModel name="street">
+    </div>
+    <div>
+      <label>City</label>
+      <input type="email" ngModel name="city">
+    </div>
+  </div>
+  <input type="submit" value="submit">
+</form>
+
+<p>{{ tdform.value | json }}</p>
