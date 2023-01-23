@@ -2,15 +2,6 @@
 <nav>
   <a routerLink="/">Home</a>
   <a routerLink="/forms">Forms</a>
+  <a routerLink="/state-management">State management</a>
 </nav>
 <router-outlet></router-outlet>
-
-<br>
-
-<button (click)="increment()">Increment</button>
-
-<div>Current Count: {{ count$ | async }}</div>
-
-<button (click)="decrement()">Decrement</button>
-
-<button (click)="reset()">Reset Counter</button>

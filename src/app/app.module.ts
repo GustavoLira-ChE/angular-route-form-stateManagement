@@ -13,6 +13,10 @@ import { HomeMessageComponent } from './components/home-message/home-message.com
 import { MyHighlightDirective } from './directives/my-highlight.directive';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './state/reducer/reducer';
+import { CounterComponent } from './components/counter/counter.component';
+import { StateManagementContainerComponent } from './components/state-management-container/state-management-container.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { employeeReducer } from './state/reducer/employee.reducer';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,17 @@ import { counterReducer } from './state/reducer/reducer';
     ModelDriveFormOneComponent,
     ModelDriveFormTwoComponent,
     HomeMessageComponent,
-    MyHighlightDirective
+    MyHighlightDirective,
+    CounterComponent,
+    StateManagementContainerComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({count:counterReducer}),
+    StoreModule.forRoot({count:counterReducer, employees: employeeReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
