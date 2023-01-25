@@ -6,6 +6,13 @@ export const employeeReducer = createReducer(
   initialState,
   on(addEmployee, (state, newEmployee: Employee) => [...state, newEmployee]),
   on(deleteEmployee, (state, e: Employee) => {
-    return state.filter(em => em.id != e.id && em.name != e.name);
+    return state.filter(em => filterByIdName(em,e));
   }),
 );
+
+function filterByIdName(employeeFromArray:Employee,employeeBeenChecking:Employee){
+  if(employeeFromArray.id == employeeBeenChecking.id && employeeFromArray.name == employeeBeenChecking.name){
+    return false;
+  }
+  return true;
+}
